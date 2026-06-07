@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#fbfaf7"/>
+  <text x="600" y="68" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="34" font-weight="700" fill="#222">科研论文写作飞轮</text>
+  <text x="600" y="108" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="18" fill="#666">论文不是最后一步，而是问题、方法、实验和表达不断互相校准的过程</text>
+  <circle cx="600" cy="410" r="210" fill="#ffffff" stroke="#d8d2c8" stroke-width="2"/>
+  <circle cx="600" cy="410" r="92" fill="#2f4858"/>
+  <text x="600" y="392" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="24" font-weight="700" fill="#fff">论文 Story</text>
+  <text x="600" y="426" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="16" fill="#e8f0f2">任务、挑战、洞察、贡献</text>
+  <g font-family="Microsoft YaHei, Arial" font-size="17" fill="#222">
+    <rect x="488" y="154" width="224" height="82" rx="18" fill="#f2d8bd" stroke="#d8a66f"/>
+    <text x="600" y="187" text-anchor="middle" font-weight="700">重要问题</text>
+    <text x="600" y="216" text-anchor="middle" font-size="14">为什么值得研究</text>
+    <rect x="804" y="300" width="238" height="86" rx="18" fill="#d4e8d4" stroke="#8db98d"/>
+    <text x="923" y="333" text-anchor="middle" font-weight="700">方法设计</text>
+    <text x="923" y="362" text-anchor="middle" font-size="14">模块、动机、技术优势</text>
+    <rect x="748" y="560" width="258" height="88" rx="18" fill="#d7e0f2" stroke="#91a6d4"/>
+    <text x="877" y="594" text-anchor="middle" font-weight="700">实验验证</text>
+    <text x="877" y="623" text-anchor="middle" font-size="14">comparison、ablation、analysis</text>
+    <rect x="194" y="560" width="258" height="88" rx="18" fill="#eadcf2" stroke="#b693cf"/>
+    <text x="323" y="594" text-anchor="middle" font-weight="700">写作表达</text>
+    <text x="323" y="623" text-anchor="middle" font-size="14">段落 message、图表、flow</text>
+    <rect x="158" y="300" width="238" height="86" rx="18" fill="#f2dddd" stroke="#d49a9a"/>
+    <text x="277" y="333" text-anchor="middle" font-weight="700">Reviewer 自审</text>
+    <text x="277" y="362" text-anchor="middle" font-size="14">提前回答质疑</text>
+  </g>
+  <g fill="none" stroke="#6f767d" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M710 222 C800 245 865 272 903 300"/>
+    <path d="M956 386 C978 450 954 516 903 560"/>
+    <path d="M748 610 C630 675 500 664 414 620"/>
+    <path d="M276 560 C220 500 207 432 245 386"/>
+    <path d="M325 300 C372 250 430 222 488 200"/>
+  </g>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6f767d"/>
+    </marker>
+  </defs>
+  <g font-family="Microsoft YaHei, Arial" font-size="15" fill="#555">
+    <text x="600" y="710" text-anchor="middle">判断论文是否成熟：story 能讲清、方法能看懂、实验能支撑、图表有第一印象、自审能经得起追问。</text>
+  </g>
+</svg>
