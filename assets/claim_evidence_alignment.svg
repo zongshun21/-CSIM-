@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#fbfaf7"/>
+  <text x="600" y="66" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="34" font-weight="700" fill="#222">Claim 与 Evidence 对齐图</text>
+  <text x="600" y="104" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="18" fill="#666">论文里的每一句强判断，都要能在实验、理论、引用或案例中找到支撑</text>
+  <line x1="90" y1="370" x2="1110" y2="370" stroke="#b8b0a4" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="110" y="350" font-family="Microsoft YaHei, Arial" font-size="16" fill="#777">读者看见的表层表达</text>
+  <text x="110" y="400" font-family="Microsoft YaHei, Arial" font-size="16" fill="#777">作者必须准备的底层证据</text>
+  <g font-family="Microsoft YaHei, Arial">
+    <rect x="165" y="150" width="210" height="92" rx="18" fill="#f4d4c8" stroke="#ce8e78"/>
+    <text x="270" y="186" text-anchor="middle" font-size="20" font-weight="700" fill="#222">Abstract claim</text>
+    <text x="270" y="216" text-anchor="middle" font-size="14" fill="#555">最浓缩、最容易被审稿人追问</text>
+    <rect x="495" y="130" width="210" height="112" rx="18" fill="#f0dfb8" stroke="#c9a657"/>
+    <text x="600" y="170" text-anchor="middle" font-size="20" font-weight="700" fill="#222">Introduction claim</text>
+    <text x="600" y="200" text-anchor="middle" font-size="14" fill="#555">问题重要性、挑战、贡献</text>
+    <rect x="825" y="150" width="210" height="92" rx="18" fill="#d8e7c8" stroke="#94b36e"/>
+    <text x="930" y="186" text-anchor="middle" font-size="20" font-weight="700" fill="#222">Method claim</text>
+    <text x="930" y="216" text-anchor="middle" font-size="14" fill="#555">模块必要性和技术优势</text>
+    <path d="M270 242 C270 320 270 400 270 486" stroke="#7c858c" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+    <path d="M600 242 C600 325 600 410 600 512" stroke="#7c858c" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+    <path d="M930 242 C930 320 930 400 930 486" stroke="#7c858c" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+    <rect x="140" y="486" width="260" height="138" rx="20" fill="#ffffff" stroke="#d8d2c8"/>
+    <text x="270" y="522" text-anchor="middle" font-size="19" font-weight="700" fill="#222">主结果与对比实验</text>
+    <text x="270" y="554" text-anchor="middle" font-size="14" fill="#555">数据集、指标、baseline、公平设置</text>
+    <text x="270" y="584" text-anchor="middle" font-size="14" fill="#555">支持“更好、更快、更稳”</text>
+    <rect x="470" y="512" width="260" height="138" rx="20" fill="#ffffff" stroke="#d8d2c8"/>
+    <text x="600" y="548" text-anchor="middle" font-size="19" font-weight="700" fill="#222">消融与分析</text>
+    <text x="600" y="580" text-anchor="middle" font-size="14" fill="#555">去掉模块、替换设计、参数敏感性</text>
+    <text x="600" y="610" text-anchor="middle" font-size="14" fill="#555">支持“为什么有效”</text>
+    <rect x="800" y="486" width="260" height="138" rx="20" fill="#ffffff" stroke="#d8d2c8"/>
+    <text x="930" y="522" text-anchor="middle" font-size="19" font-weight="700" fill="#222">引用、理论与可视化</text>
+    <text x="930" y="554" text-anchor="middle" font-size="14" fill="#555">前人证据、定义来源、失败案例</text>
+    <text x="930" y="584" text-anchor="middle" font-size="14" fill="#555">支持“问题存在、边界清楚”</text>
+  </g>
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c858c"/>
+    </marker>
+  </defs>
+  <text x="600" y="705" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="16" fill="#555">没有证据的 claim：补实验、补引用、降低语气，或者删除。</text>
+</svg>
