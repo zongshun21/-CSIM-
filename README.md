@@ -318,7 +318,7 @@ IEEE / ACM 数字制：
 
 GB/T 7714 组内推荐：
 
-`[2] MILDENHALL B, SRINIVASAN P P, TANCIK M, 等. NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis[C]//European Conference on Computer Vision. 2020: 405-421.`
+`[2] MILDENHALL B, SRINIVASAN P P, TANCIK M, et al. NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis[C]//European Conference on Computer Vision. 2020: 405-421.`
 
 ### 4.3 期刊论文示例
 
