@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#fbfaf7"/>
+  <text x="600" y="66" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="34" font-weight="700" fill="#222">一条完整参考文献的结构</text>
+  <text x="600" y="104" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="18" fill="#666">不同类型文献字段不同，但目标相同：让读者准确找到同一份资料</text>
+  <g font-family="Microsoft YaHei, Arial">
+    <rect x="82" y="155" width="1036" height="86" rx="16" fill="#ffffff" stroke="#d8d2c8"/>
+    <text x="110" y="190" font-size="18" fill="#222">Zhang, L., Wang, Y., &amp; Chen, X. (2025). Efficient neural reconstruction for dynamic scenes. </text>
+    <text x="110" y="220" font-size="18" fill="#222" font-style="italic">Proceedings of CVPR</text>
+    <text x="315" y="220" font-size="18" fill="#222">, 1234-1245. https://doi.org/10.xxxx/cvpr.2025.00123</text>
+    <g font-size="14" fill="#555">
+      <line x1="120" y1="250" x2="270" y2="305" stroke="#b77" stroke-width="2"/>
+      <rect x="80" y="305" width="210" height="58" rx="12" fill="#f4d4c8" stroke="#ce8e78"/>
+      <text x="185" y="340" text-anchor="middle">作者 author</text>
+      <line x1="360" y1="250" x2="430" y2="305" stroke="#b98" stroke-width="2"/>
+      <rect x="335" y="305" width="185" height="58" rx="12" fill="#f0dfb8" stroke="#c9a657"/>
+      <text x="427" y="340" text-anchor="middle">年份 year</text>
+      <line x1="610" y1="250" x2="640" y2="305" stroke="#8aa" stroke-width="2"/>
+      <rect x="560" y="305" width="205" height="58" rx="12" fill="#d8e7e9" stroke="#86aeb5"/>
+      <text x="662" y="340" text-anchor="middle">题名 title</text>
+      <line x1="785" y1="250" x2="830" y2="305" stroke="#88a" stroke-width="2"/>
+      <rect x="800" y="305" width="210" height="58" rx="12" fill="#d7e0f2" stroke="#91a6d4"/>
+      <text x="905" y="340" text-anchor="middle">来源 source</text>
+      <line x1="1030" y1="250" x2="1040" y2="305" stroke="#8a8" stroke-width="2"/>
+      <rect x="1018" y="305" width="110" height="58" rx="12" fill="#dcebd3" stroke="#94b36e"/>
+      <text x="1073" y="340" text-anchor="middle">DOI/URL</text>
+    </g>
+    <rect x="110" y="435" width="280" height="132" rx="18" fill="#ffffff" stroke="#d8d2c8"/>
+    <text x="250" y="470" text-anchor="middle" font-size="20" font-weight="700" fill="#222">会议论文</text>
+    <text x="250" y="505" text-anchor="middle" font-size="15" fill="#555">会议名通常替代期刊名</text>
+    <text x="250" y="535" text-anchor="middle" font-size="15" fill="#555">有页码写页码；无页码可写论文编号</text>
+    <rect x="460" y="435" width="280" height="132" rx="18" fill="#ffffff" stroke="#d8d2c8"/>
+    <text x="600" y="470" text-anchor="middle" font-size="20" font-weight="700" fill="#222">期刊论文</text>
+    <text x="600" y="505" text-anchor="middle" font-size="15" fill="#555">期刊名、卷、期、页码/文章号</text>
+    <text x="600" y="535" text-anchor="middle" font-size="15" fill="#555">在线优先可能暂时没有卷期页</text>
+    <rect x="810" y="435" width="280" height="132" rx="18" fill="#ffffff" stroke="#d8d2c8"/>
+    <text x="950" y="470" text-anchor="middle" font-size="20" font-weight="700" fill="#222">预印本/网页/软件</text>
+    <text x="950" y="505" text-anchor="middle" font-size="15" fill="#555">用 arXiv ID、版本、URL、访问日期</text>
+    <text x="950" y="535" text-anchor="middle" font-size="15" fill="#555">优先引用正式发表版本</text>
+    <text x="600" y="665" text-anchor="middle" font-size="17" fill="#555">完整参考文献 = 作者 + 时间 + 题名 + 来源 + 定位信息 + 持久链接。</text>
+  </g>
+</svg>
