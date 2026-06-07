@@ -274,7 +274,6 @@ APA 7：
 | 标量 | 小写斜体 | $x, y, t, \lambda$ |
 | 向量 | 小写粗体 | $\mathbf{x}, \mathbf{v}, \mathbf{n}$ |
 | 矩阵 | 大写粗体 | $\mathbf{K}, \mathbf{R}, \mathbf{T}$ |
-| 图像 / 张量 | 粗体大写 | $\mathbf{I}, \mathbf{F}$ |
 | 集合 | 花体 | $\mathcal{D}, \mathcal{P}$ |
 | 损失函数 | 花体 L | $\mathcal{L}_{\mathrm{rec}}$ |
 | 网络参数 | 希腊字母 | $\theta, \phi$ |
@@ -300,12 +299,12 @@ APA 7：
 
 ### 5.3 Loss 写法
 
-$$
+$
 \mathcal{L}
 = \mathcal{L}_{\mathrm{rec}}
 + \lambda_{\mathrm{prior}}\mathcal{L}_{\mathrm{prior}}
 + \lambda_{\mathrm{smooth}}\mathcal{L}_{\mathrm{smooth}}.
-$$
+$
 
 | 规则 | 说明 |
 |---|---|
