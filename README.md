@@ -271,46 +271,46 @@ APA 7：
 
 | 对象 | 推荐写法 | 示例 |
 |---|---|---|
-| 标量 | 小写斜体 | `$x, y, t, \lambda$` |
-| 向量 | 小写粗体 | `$\mathbf{x}, \mathbf{v}, \mathbf{n}$` |
-| 矩阵 | 大写粗体 | `$\mathbf{K}, \mathbf{R}, \mathbf{T}$` |
-| 图像 / 张量 | 粗体大写 | `$\mathbf{I}, \mathbf{F}$` |
-| 集合 | 花体 | `$\mathcal{D}, \mathcal{P}$` |
-| 损失函数 | 花体 L | `$\mathcal{L}_{\mathrm{rec}}$` |
-| 网络参数 | 希腊字母 | `$\theta, \phi$` |
+| 标量 | 小写斜体 | $x, y, t, \lambda$ |
+| 向量 | 小写粗体 | $\mathbf{x}, \mathbf{v}, \mathbf{n}$ |
+| 矩阵 | 大写粗体 | $\mathbf{K}, \mathbf{R}, \mathbf{T}$ |
+| 图像 / 张量 | 粗体大写 | $\mathbf{I}, \mathbf{F}$ |
+| 集合 | 花体 | $\mathcal{D}, \mathcal{P}$ |
+| 损失函数 | 花体 L | $\mathcal{L}_{\mathrm{rec}}$ |
+| 网络参数 | 希腊字母 | $\theta, \phi$ |
 
 ### 5.2 视觉论文常用符号
 
 | 概念 | 推荐符号 | 含义 |
 |---|---|---|
-| 输入图像 | `$\mathbf{I}$` | 一张 RGB 图像 |
-| 第 `i` 个视角 | `$\mathbf{I}_i$` | 多视角输入 |
-| 像素坐标 | `$\mathbf{u}=(u,v)$` | 2D pixel coordinate |
-| 3D 点 | `$\mathbf{x}\in\mathbb{R}^3$` | 空间点 |
-| 相机内参 | `$\mathbf{K}$` | intrinsic matrix |
-| 相机位姿 | `$\mathbf{P}_i$` 或 `$(\mathbf{R}_i,\mathbf{t}_i)$` | 第 `i` 个视角外参 |
-| 法向 | `$\mathbf{n}$` | surface normal |
-| 深度图 | `$\mathbf{D}$` | depth map |
-| 反照率图 | `$\mathbf{A}$` | albedo map |
-| 镜面项 | `$\mathbf{S}$` | specular map |
-| 光照 | `$\mathbf{L}$` | illumination representation |
-| 渲染函数 | `$\mathcal{R}$` | differentiable renderer |
-| 预测值 | `$\hat{\mathbf{I}}$` | 模型输出 |
-| 真实值 | `$\mathbf{I}^{\mathrm{gt}}$` | ground truth |
+| 输入图像 | $\mathbf{I}$ | 一张 RGB 图像 |
+| 第 $i$ 个视角 | $\mathbf{I}_i$ | 多视角输入 |
+| 像素坐标 | $\mathbf{u}=(u,v)$ | 2D pixel coordinate |
+| 3D 点 | $\mathbf{x}\in\mathbb{R}^3$ | 空间点 |
+| 相机内参 | $\mathbf{K}$ | intrinsic matrix |
+| 相机位姿 | $\mathbf{P}_i$ 或 $(\mathbf{R}_i,\mathbf{t}_i)$ | 第 $i$ 个视角外参 |
+| 法向 | $\mathbf{n}$ | surface normal |
+| 深度图 | $\mathbf{D}$ | depth map |
+| 反照率图 | $\mathbf{A}$ | albedo map |
+| 镜面项 | $\mathbf{S}$ | specular map |
+| 光照 | $\mathbf{L}$ | illumination representation |
+| 渲染函数 | $\mathcal{R}$ | differentiable renderer |
+| 预测值 | $\hat{\mathbf{I}}$ | 模型输出 |
+| 真实值 | $\mathbf{I}^{\mathrm{gt}}$ | ground truth |
 
 ### 5.3 Loss 写法
 
-```latex
+$$
 \mathcal{L}
 = \mathcal{L}_{\mathrm{rec}}
 + \lambda_{\mathrm{prior}}\mathcal{L}_{\mathrm{prior}}
 + \lambda_{\mathrm{smooth}}\mathcal{L}_{\mathrm{smooth}}.
-```
+$$
 
 | 规则 | 说明 |
 |---|---|
-| 总损失用 `\mathcal{L}` | 子损失用语义下标 |
-| 权重用 `\lambda` | 下标说明作用，不用 `a, b, c` |
+| 总损失用 $\mathcal{L}$ | 子损失用语义下标 |
+| 权重用 $\lambda$ | 下标说明作用，不用 `a, b, c` |
 | 第一次出现必须定义 | 不让读者猜符号含义 |
 | 图注、正文、公式统一 | 同一对象不要换符号 |
 
