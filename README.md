@@ -21,10 +21,10 @@
 |---|---|---|
 | **0. 写作总纲** | 核心原则与判断标准 | [进入](#0-写作总纲先判断再表达) |
 | **1. 从项目到论文** | [1.1 一篇论文的主线](#11-一篇论文的主线) · [1.2 推荐写作顺序](#12-推荐写作顺序) · [1.3 截稿前一个月倒排](#13-截稿前一个月倒排) | [进入](#1-从项目到论文先搭-story-再写正文) |
-| **2. 论文正文写法** | [2.1 Title 和 Abstract](#21-title-和-abstract) · [2.2 Introduction](#22-introduction) · [2.3 Method](#23-method) · [2.4 Experiments](#24-experiments) · [2.5 Related Work 和 Conclusion](#25-related-work-和-conclusion) | [进入](#2-论文正文写法每一节都要回答固定问题) |
+| **2. 论文正文写法** | [2.1 总原则](#21-正文写作总原则) · [2.2 Title 和 Abstract](#22-title-和-abstract) · [2.3 Introduction](#23-introduction) · [2.4 Method](#24-method) · [2.5 Implementation Details](#25-implementation-details) · [2.6 Experiments](#26-experiments) · [2.7 Related Work](#27-related-work) · [2.8 Conclusion](#28-conclusion) · [2.9 自审修改](#29-自审修改) | [进入](#2-论文正文写法每一节都要回答固定问题) |
 | **3. 组会汇报** | [3.1 推荐汇报结构](#31-推荐汇报结构) · [3.2 每一页只讲一个判断](#32-每一页只讲一个判断) | [进入](#3-组会汇报不要只报结果要报判断) |
 | **4. 参考文献规范** | [4.1 完整字段](#41-完整参考文献应包含什么) · [4.2 会议论文](#42-会议论文示例) · [4.3 期刊论文](#43-期刊论文示例) · [4.4 特殊情况](#44-特殊情况) · [4.5 BibTeX](#45-bibtex-建议) | [进入](#4-参考文献规范真实完整可追溯) |
-| **5. 符号与字母规范** | [5.1 字体约定](#51-字体约定) · [5.2 视觉论文常用符号](#52-视觉论文常用符号) · [5.3 Loss 写法](#53-loss-写法) · [完整符号规范](docs/论文符号与字母规范.md) | [进入](#5-符号与字母规范让公式可读) |
+| **5. 符号与字母规范** | [5.1 字体约定](#51-字体约定) | [进入](#5-符号与字母规范让公式可读) |
 | **6. 投稿前检查** | story、claim、method、experiments、figures、references、notation、submission 自查 | [进入](#6-投稿前检查少犯低级错误) |
 
 ---
@@ -94,66 +94,163 @@
 
 ## 2. 论文正文写法：每一节都要回答固定问题
 
-### 2.1 Title 和 Abstract
-
-| 要回答的问题 | 写作要求 | 以 `Learning Diffusion Priors for Inverse Rendering Under Unknown Illumination` 为例 |
-|---|---|---|
-| 研究什么任务 | 标题和摘要先说明任务、输入输出、场景 | 从 posed images 中恢复 object materials |
-| 难点在哪里 | 不要只写 challenging，要写具体困难 | geometry、material、lighting 耦合，导致反演歧义 |
-| 方法是什么 | 写机制，不是堆术语 | 用 albedo/specular diffusion priors 正则化 material recovery |
-| 证据覆盖哪里 | 说明数据、任务和验证范围 | real-world 和 synthetic data 上验证 |
-| 结论边界在哪里 | 只说实验支持的结论 | 受 geometry quality 等因素影响 |
-
-**反例写法**：`A Novel Diffusion Framework for 3D Vision`。
-问题：任务太宽，读者不知道是重建、渲染、材质估计还是 relighting。
-
-**更好写法**：`Diffusion Material Priors for Inverse Rendering under Unknown Illumination`。
-原因：任务、方法和关键条件都清楚。
-
-### 2.2 Introduction
-
-Introduction 的目标是让 reviewer 接受“这篇论文必须存在”。
-
-| 段落 | 该段任务 | 检查标准 |
-|---|---|---|
-| 背景段 | 说明任务和应用价值 | 不要泛泛讲大领域 |
-| 现有方法段 | 概括主要路线 | 不要按作者逐篇罗列 |
-| Gap 段 | 指出具体失败模式 | gap 必须能被实验验证 |
-| Insight 段 | 说明你的关键观察 | insight 要自然引出方法 |
-| Contribution 段 | 列出贡献 | 每条贡献都要有证据 |
-
-### 2.3 Method
-
-Method 不是代码说明书，而是设计论证。
-
-| 需要讲清楚 | 应该怎么写 |
-|---|---|
-| 输入输出 | 先定义问题和符号 |
-| 总体框架 | 先给 pipeline，再拆模块 |
-| 模块动机 | 每个模块回答“为什么需要它” |
-| 模块设计 | 讲机制，不按代码顺序写 |
-| 优势与边界 | 说明解决了什么，也说明依赖什么假设 |
+本章参考你给的论文写作资料的核心逻辑：先画清楚 pipeline，先搭 story，再写 Introduction / Method / Experiments，最后写 Abstract 和 Title；写完后要像 reviewer 一样反复审自己。这里不照搬模板，而是整理成组内可以直接使用的正文写作规范。
 
 > [!IMPORTANT]
-> Method 中每个模块都应回答：为什么需要、怎么设计、解决什么问题、如何被实验验证。
+> 正文写作最重要的不是英文华丽，而是每一节都有明确任务：读者读完这一节，应该更相信你的问题、方法或证据。
 
-### 2.4 Experiments
+### 2.1 正文写作总原则
 
-| 实验类型 | 回答的问题 | 常见错误 |
+| 原则 | 具体含义 | 写作重点 |
 |---|---|---|
-| Comparison | 是否优于已有方法 | 只放表格，不解释提升来自哪里 |
-| Ablation | 每个模块是否必要 | 消融项和 claim 对不上 |
-| Analysis | 方法为什么有效 | 只看主指标，不分析现象 |
-| Failure cases | 方法边界在哪里 | 把失败案例藏起来 |
-| Efficiency | 代价是否可接受 | 不报告时间、显存、参数量 |
+| 先让 reader 读懂 | 每一段只解决一个问题 | 段首说明目的，段尾给出结论 |
+| 先让 reviewer 信服 | 每个强 claim 都要有实验或分析支撑 | Abstract 和 Introduction 的 claim 最危险 |
+| 先让图表讲故事 | teaser、pipeline、表格、可视化决定第一印象 | 图题和 caption 要直接写结论 |
+| 先自我 review | 写完后主动问 reviewer 会质疑什么 | 把可能被拒的点提前修掉 |
+| 反复打磨 | 初稿只负责讲清楚，后续再追求漂亮 | 不要在 story 不清楚时过早润色句子 |
 
-### 2.5 Related Work 和 Conclusion
+### 2.2 Title 和 Abstract
 
-| 部分 | 写作重点 | 不推荐 |
+Title 和 Abstract 是读者的第一判断入口。Title 要让人一眼知道任务、方法和关键条件；Abstract 要在很短时间里讲清任务、困难、方法、证据和结论边界。
+
+| 需要回答的问题 | 重点是什么 | 常见误区 |
 |---|---|---|
-| Related Work | 按技术路线组织，说明本文位置 | 按年份或作者流水账 |
-| Related Work | 先承认已有贡献，再说明区别 | 只说别人不好 |
-| Conclusion | 回到任务、方法、证据和边界 | 只重复 proposed a novel method |
+| 研究什么任务 | 明确输入、输出、场景 | 标题太大，只写 “A Novel Framework” |
+| 为什么难 | 写具体技术困难，不只写 challenging | gap 写得空泛，和方法没关系 |
+| 方法核心是什么 | 写方法机制，不堆模块名 | 只说用了 diffusion / transformer / NeRF |
+| 证据是什么 | 说明在哪些数据和实验上验证 | 只写 SOTA，不写证据范围 |
+| 边界在哪里 | 不夸大实验不能证明的结论 | 把局部提升写成普遍解决 |
+
+| 以 `Learning Diffusion Priors for Inverse Rendering Under Unknown Illumination` 为例 | 可以学习什么 |
+|---|---|
+| `Under Unknown Illumination` 放在标题里 | 标题直接突出关键难点，而不是泛泛写 inverse rendering |
+| 从 posed images 恢复 object materials | 摘要先讲输入输出，让任务清楚 |
+| geometry、material、lighting 耦合 | 难点具体，不是空泛说任务很难 |
+| albedo / specular diffusion priors | 方法和困难直接对应：用材质先验缓解歧义 |
+
+**检查问题**：读完 Abstract，读者能否回答“你解决什么、为什么难、你怎么做、凭什么信、适用边界是什么”。
+
+### 2.3 Introduction
+
+Introduction 的任务是制造“必要性”：让 reviewer 觉得这篇论文不是可有可无，而是自然地从已有问题中长出来的。
+
+| 段落 | 核心任务 | 重点 |
+|---|---|---|
+| 背景段 | 说明任务和应用价值 | 不要从大而空的领域历史开始 |
+| 现有方法段 | 概括主流路线 | 按技术路线讲，不按论文年份罗列 |
+| Gap 段 | 指出现有方法的具体失败模式 | gap 要能被实验或图像现象验证 |
+| Insight 段 | 给出自己的关键观察 | insight 要能自然引出方法设计 |
+| Method 段 | 简要说明方法如何利用 insight | 不展开细节，只讲核心机制 |
+| Contribution 段 | 列贡献 | 每条贡献都要能追到证据 |
+
+| 重点判断 | 好写法 | 不好写法 |
+|---|---|---|
+| gap 是否具体 | 未知光照下，材质颜色和阴影容易混淆 | Existing methods are inaccurate |
+| insight 是否有用 | 材质分布可以作为先验约束反演过程 | We observe diffusion models are powerful |
+| contribution 是否可验证 | 提出 albedo/specular priors，并通过 ablation 验证 | We propose a novel framework |
+
+> [!IMPORTANT]
+> Introduction 里的每一个强 claim 都要提前问：后文有没有实验、图或引用支撑？如果没有，就降级表述或补证据。
+
+### 2.4 Method
+
+Method 不是代码说明书，而是设计论证。读者关心的不是你代码怎么写，而是每个模块为什么必要、如何解决前文 gap、是否能被实验验证。
+
+| 内容 | 需要讲清楚 | 重点 |
+|---|---|---|
+| Problem formulation | 输入、输出、符号、目标 | 先让读者知道问题被如何数学化 |
+| Overview | pipeline 和信息流 | 一张图能否说明整体方法 |
+| Module motivation | 为什么需要这个模块 | 每个模块都要对应一个困难或 insight |
+| Module design | 模块如何工作 | 讲机制，不按代码函数顺序写 |
+| Objective | loss 每项的作用 | 每个 loss 都要有语义和必要性 |
+| Training / inference | 训练和测试流程 | 只写复现所需的关键步骤 |
+
+| Method 写作检查 | 应该能回答 |
+|---|---|
+| 这个模块解决哪个问题 | 对应 Introduction 中哪个 gap |
+| 为什么不用更简单方法 | 设计是否有必要 |
+| 输入输出是什么 | 符号是否定义清楚 |
+| 怎么证明它有用 | 是否有 ablation 或 analysis |
+
+**常见误区**：把代码流程当 Method；堆公式但不解释每项作用；模块名很高级但没有动机；pipeline 图和正文符号不一致。
+
+### 2.5 Implementation Details
+
+Implementation Details 的任务是保证别人能复现你的实验，不是把所有代码细节都倒出来。
+
+| 应该写 | 重点 |
+|---|---|
+| 网络结构关键参数 | 只写影响结果和复现的设置 |
+| 训练配置 | optimizer、learning rate、batch size、iterations、hardware |
+| 数据处理 | 分辨率、crop、mask、augmentation、采样策略 |
+| 推理设置 | 测试时间、采样步数、后处理 |
+| 公平性设置 | baseline 是否使用同样输入、同样数据、同样评价协议 |
+
+**检查问题**：别人看到这节，能否复现主要实验？reviewer 能否判断 comparison 是公平的？
+
+### 2.6 Experiments
+
+Experiments 的任务不是展示“我做了很多实验”，而是用证据回答 reviewer 的疑问。
+
+| 实验类型 | 回答的问题 | 重点 |
+|---|---|---|
+| Comparison | 是否比已有方法好 | 说明提升来自什么场景、什么指标 |
+| Ablation | 每个模块是否必要 | 每个 ablation 对应一个 claim |
+| Analysis | 方法为什么有效 | 用可视化、分场景、误差分析解释现象 |
+| Failure cases | 方法边界在哪里 | 主动暴露失败，不要藏问题 |
+| Efficiency | 代价是否可接受 | 时间、显存、参数量、推理速度 |
+
+| 写实验段落时 | 应该这样组织 |
+|---|---|
+| 段首 | 这个实验想验证什么 claim |
+| 中间 | 实验设置、对比对象、关键变量 |
+| 结果 | 不只报数字，要解释数字说明什么 |
+| 段尾 | 得出判断，并连接到下一组实验 |
+
+> [!IMPORTANT]
+> 表格不是结果解释。表格只呈现证据，正文必须告诉读者：最重要的数字是哪一个，为什么重要，支持了哪个 claim。
+
+### 2.7 Related Work
+
+Related Work 的任务是定位本文贡献，而不是证明自己读了很多论文。
+
+| 写法 | 重点 |
+|---|---|
+| 按技术路线组织 | 每一类工作对应一种解决思路 |
+| 先承认已有贡献 | 不要把相关工作写成“别人都不行” |
+| 再说明本文区别 | 区别要和 gap / insight 对齐 |
+| 少按年份罗列 | 年份不是逻辑，技术路线才是逻辑 |
+
+**检查问题**：读完 Related Work，读者是否知道本文站在哪几条路线的交叉处，以及本文和每条路线的关键差异。
+
+### 2.8 Conclusion
+
+Conclusion 不是简单重复 Abstract，而是收束全文：本文解决了什么、靠什么解决、证据说明什么、还有什么边界。
+
+| 应该写 | 不应该写 |
+|---|---|
+| 回到任务和核心 gap | 只说 proposed a novel method |
+| 总结核心机制 | 重新罗列所有模块 |
+| 概括主要证据 | 夸大没有验证的结论 |
+| 说明局限和未来方向 | 写空泛 future work |
+
+**好结论的感觉**：读者读完会觉得“这篇论文的贡献、证据和边界都收住了”。
+
+### 2.9 自审修改
+
+写完初稿后，要用 adversarial writing 的方式审自己：假设 reviewer 正在挑毛病，提前把问题修掉。
+
+| 自审对象 | 必问问题 |
+|---|---|
+| Story | 读者能否顺着 Task-Gap-Insight-Method-Evidence 读下来 |
+| Claim | 每个强 claim 是否都有证据 |
+| Figure | teaser、pipeline、表格是否第一眼清楚 |
+| Paragraph | 每段是否只讲一个问题 |
+| Experiment | comparison / ablation / analysis 是否支撑主线 |
+| Writing | 是否有空泛形容词，如 significant、effective、robust 但没有证据 |
+
+> [!TIP]
+> 好论文通常不是一次写出来的，而是反复 review、反复改出来的。导师和同学指出的问题越多，投稿后 reviewer 能抓住的问题通常越少。
 
 ---
 
@@ -265,8 +362,6 @@ APA 7：
 
 ## 5. 符号与字母规范：让公式可读
 
-完整符号规范见：[docs/论文符号与字母规范.md](docs/论文符号与字母规范.md)。README 中保留最常用规则。
-
 ### 5.1 字体约定
 
 | 对象 | 推荐写法 | 示例 |
@@ -278,41 +373,6 @@ APA 7：
 | 集合 | 花体 | $\mathcal{D}, \mathcal{P}$ |
 | 损失函数 | 花体 L | $\mathcal{L}_{\mathrm{rec}}$ |
 | 网络参数 | 希腊字母 | $\theta, \phi$ |
-
-### 5.2 视觉论文常用符号
-
-| 概念 | 推荐符号 | 含义 |
-|---|---|---|
-| 输入图像 | $\mathbf{I}$ | 一张 RGB 图像 |
-| 第 $i$ 个视角 | $\mathbf{I}_i$ | 多视角输入 |
-| 像素坐标 | $\mathbf{u}=(u,v)$ | 2D pixel coordinate |
-| 3D 点 | $\mathbf{x}\in\mathbb{R}^3$ | 空间点 |
-| 相机内参 | $\mathbf{K}$ | intrinsic matrix |
-| 相机位姿 | $\mathbf{P}_i$ 或 $(\mathbf{R}_i,\mathbf{t}_i)$ | 第 $i$ 个视角外参 |
-| 法向 | $\mathbf{n}$ | surface normal |
-| 深度图 | $\mathbf{D}$ | depth map |
-| 反照率图 | $\mathbf{A}$ | albedo map |
-| 镜面项 | $\mathbf{S}$ | specular map |
-| 光照 | $\mathbf{L}$ | illumination representation |
-| 渲染函数 | $\mathcal{R}$ | differentiable renderer |
-| 预测值 | $\hat{\mathbf{I}}$ | 模型输出 |
-| 真实值 | $\mathbf{I}^{\mathrm{gt}}$ | ground truth |
-
-### 5.3 Loss 写法
-
-$$
-\mathcal{L}
-= \mathcal{L}_{\mathrm{rec}}
-+ \lambda_{\mathrm{prior}}\mathcal{L}_{\mathrm{prior}}
-+ \lambda_{\mathrm{smooth}}\mathcal{L}_{\mathrm{smooth}}.
-$$
-
-| 规则 | 说明 |
-|---|---|
-| 总损失用 $\mathcal{L}$ | 子损失用语义下标 |
-| 权重用 $\lambda$ | 下标说明作用，不用 `a, b, c` |
-| 第一次出现必须定义 | 不让读者猜符号含义 |
-| 图注、正文、公式统一 | 同一对象不要换符号 |
 
 ---
 
