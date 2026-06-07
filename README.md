@@ -18,7 +18,7 @@
 ## 致谢与适用性声明
 
 > [!NOTE]
-> 本项目感谢彭思达教授及其开源科研写作资料。本文档中的部分写作思想、论文组织方式和自审意识受到其开源工作的启发；我们在学习和参考后，结合本人科研训练需求进行了吸收。
+> 本项目感谢彭思达教授及其开源科研写作资料。本文档中的部分写作思想、论文组织方式和自审意识受到其开源工作的启发；我们在学习和参考后，结合本人/本实验室的科研训练需求进行了重新整理、吸收和改写。
 
 > [!IMPORTANT]
 > 本仓库不是通用论文写作标准，也不代表任何会议、期刊或机构的正式要求。它主要适用于本人或本实验室内部的论文写作、组会汇报、开题/中期等科研训练场景。正式投稿时，应优先遵守目标会议、期刊、学校或课题组的具体格式要求。
@@ -377,15 +377,15 @@ APA 7：
 
 ### 5.1 字体约定
 
-| 对象 | 推荐写法 | 示例 |
-|---|---|---|
-| 标量 | 小写斜体 | $x, y, t, \lambda$ |
-| 向量 | 小写粗体 | $\mathbf{x}, \mathbf{v}, \mathbf{n}$ |
-| 矩阵 | 大写粗体 | $\mathbf{K}, \mathbf{R}, \mathbf{T}$ |
-| 图像 / 张量 | 粗体大写 | $\mathbf{I}, \mathbf{F}$ |
-| 集合 | 花体 | $\mathcal{D}, \mathcal{P}$ |
-| 损失函数 | 花体 L | $\mathcal{L}_{\mathrm{rec}}$ |
-| 网络参数 | 希腊字母 | $\theta, \phi$ |
+| 对象 | 推荐写法 | 示例 | LaTeX 代码 |
+|---|---|---|---|
+| 标量 | 小写斜体 | $x, y, t, \lambda$ | `$x, y, t, \lambda$` |
+| 向量 | 小写粗体 | $\mathbf{x}, \mathbf{v}, \mathbf{n}$ | `$\mathbf{x}, \mathbf{v}, \mathbf{n}$` |
+| 矩阵 | 大写粗体 | $\mathbf{K}, \mathbf{R}, \mathbf{T}$ | `$\mathbf{K}, \mathbf{R}, \mathbf{T}$` |
+| 图像 / 张量 | 粗体大写 | $\mathbf{I}, \mathbf{F}$ | `$\mathbf{I}, \mathbf{F}$` |
+| 集合 | 花体 | $\mathcal{D}, \mathcal{P}$ | `$\mathcal{D}, \mathcal{P}$` |
+| 损失函数 | 花体 L | $\mathcal{L}_{\mathrm{rec}}$ | `$\mathcal{L}_{\mathrm{rec}}$` |
+| 网络参数 | 希腊字母 | $\theta, \phi$ | `$\theta, \phi$` |
 
 ---
 
