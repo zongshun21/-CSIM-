@@ -107,7 +107,7 @@
 
 ## 2. 论文正文写法：每一节都要回答固定问题
 
-本章参考你给的论文写作资料的核心逻辑：先画清楚 pipeline，先搭 story，再写 Introduction / Method / Experiments，最后写 Abstract 和 Title；写完后要像 reviewer 一样反复审自己。这里不照搬模板，而是整理成组内可以直接使用的正文写作规范。
+本章的核心逻辑：先画清楚 pipeline，先搭 story，再写 Introduction / Method / Experiments，最后写 Abstract 和 Title；写完后要像 reviewer 一样反复审自己。
 
 > [!IMPORTANT]
 > 正文写作最重要的不是英文华丽，而是每一节都有明确任务：读者读完这一节，应该更相信你的问题、方法或证据。
